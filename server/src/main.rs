@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 
-use astro_blaster::api;
 use axum::Router;
+use hedgecock_dev::api;
 use tower_http::services::{ServeDir, ServeFile};
 
 #[shuttle_runtime::main]
