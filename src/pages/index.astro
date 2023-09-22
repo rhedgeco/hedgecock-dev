@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import astroLogo from "@assets/logos/astro.svg";
+import svelteLogo from "@assets/logos/svelte.svg";
+import rustLogo from "@assets/logos/ferris.svg";
+import SocketClicker from "@components/SocketClicker.svelte";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body>
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-lg">
+                    <h1 class="text-5xl font-bold">Astro + Svelte + Rust</h1>
+                    <div class="flex justify-center gap-4 my-12">
+                        <Image
+                            src={astroLogo}
+                            alt="Astro Logo"
+                            class="h-36 w-36"
+                        />
+                        <Image
+                            src={svelteLogo}
+                            alt="Astro Logo"
+                            class="h-36 w-36"
+                        />
+                        <Image
+                            src={rustLogo}
+                            alt="Astro Logo"
+                            class="h-36 w-36"
+                        />
+                    </div>
+                    <SocketClicker client:load />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

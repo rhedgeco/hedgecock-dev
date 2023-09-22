@@ -1,0 +1,6 @@
+name = "astro-blaster"
+
+# include static directory for deployment
+assets = [
+    "static/*"
+]
