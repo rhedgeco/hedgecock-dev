@@ -1,4 +1,4 @@
-name = "hedge-dev"
+name = "hedge"
 
 # include static directory for deployment
 assets = [

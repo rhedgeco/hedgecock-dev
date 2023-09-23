@@ -1,44 +1,76 @@
 ---
+import Console from "@components/Console.svelte";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
 import { Image } from "astro:assets";
-import astroLogo from "@assets/logos/astro.svg";
-import svelteLogo from "@assets/logos/svelte.svg";
-import rustLogo from "@assets/logos/ferris.svg";
-import SocketClicker from "@components/SocketClicker.svelte";
+import githubDarkLogo from "@assets/icons/github-dark.png";
+import githubWhiteLogo from "@assets/icons/github-white.png";
+import youtubeLogo from "@assets/icons/youtube.png";
+import linkedinLogo from "@assets/icons/linkedin.png";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-    </head>
-    <body>
-        <div class="hero min-h-screen bg-base-200">
-            <div class="hero-content text-center">
-                <div class="max-w-lg">
-                    <h1 class="text-5xl font-bold">Astro + Svelte + Rust</h1>
-                    <div class="flex justify-center gap-4 my-12">
+<BaseLayout title="Home">
+    <div class="hero max-w-5xl mx-auto">
+        <div class="hero-content flex-col lg:flex-row items-start">
+            <div class="space-y-4 px-4">
+                <h1 class="text-4xl font-bold">
+                    Hi! 👋<br />I'm Ryan Hedgecock
+                </h1>
+                <p>
+                    I am a software engineer based in Cupertino, CA building
+                    cool things in
+                    <span class="text-[#E05B1A]">rust</span>,
+                    <span class="text-[#885BD2]">c#</span>,
+                    <span class="text-[#5CAD39]">python</span>, and
+                    <span class="text-[#EADA3F]">more...</span>
+                </p>
+                <div class="join">
+                    <a class="btn join-item" href="https://github.com/rhedgeco">
                         <Image
-                            src={astroLogo}
-                            alt="Astro Logo"
-                            class="h-36 w-36"
+                            src={githubWhiteLogo}
+                            alt=""
+                            class="h-4 w-auto rounded-none dark-only"
                         />
                         <Image
-                            src={svelteLogo}
-                            alt="Astro Logo"
-                            class="h-36 w-36"
-                        />
+                            src={githubDarkLogo}
+                            alt=""
+                            class="h-4 w-auto rounded-none light-only"
+                        />Github
+                    </a>
+                    <a
+                        class="btn join-item"
+                        href="https://youtube.com/@rhedgeco"
+                    >
                         <Image
-                            src={rustLogo}
-                            alt="Astro Logo"
-                            class="h-36 w-36"
-                        />
-                    </div>
-                    <SocketClicker client:load />
+                            src={youtubeLogo}
+                            alt=""
+                            class="h-4 w-auto rounded-none"
+                        />Youtube
+                    </a>
+                    <a
+                        class="btn join-item"
+                        href="https://linkedin.com/in/rhedgeco/"
+                    >
+                        <Image
+                            src={linkedinLogo}
+                            alt=""
+                            class="h-4 w-auto rounded-none"
+                        />Linkedin
+                    </a>
                 </div>
             </div>
+            <div class="space-y-4">
+                <Console
+                    prefix="[ryan]$ "
+                    lines={[
+                        "This website's main purpose is to be a playground for me to run automated server-side tasks.",
+                        "",
+                        "But thank you for stopping by! :)",
+                        "",
+                        "While you're here, Check out a few of my fun public routes below!",
+                    ]}
+                />
+            </div>
         </div>
-    </body>
-</html>
+    </div>
+</BaseLayout>
