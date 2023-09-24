@@ -5,8 +5,8 @@ edition = "2021"
 publish = false
 
 [dependencies]
-axum = { version = "^0.6.2", features = ["ws"] }
-axum-extra = { version = "0.8.0" }
+axum = { version = "^0.6.2", features = ["ws", "multipart", "headers"] }
+axum-extra = { version = "0.8.0", features = ["cookie"]}
 chrono = { version = "0.4", features = ["serde"] }
 futures = "0.3"
 hyper = { version = "0.14", features = ["client", "http2"] }
@@ -20,3 +20,6 @@ sync_wrapper = "0.1"
 tokio = { version = "1", features = ["full"] }
 tower-http = { version = "0.4.4", features = ["fs", "auth"]}
 once_cell = "1.18"
+rand_core = "0.6.4"
+rand_chacha = "0.3.1"
+axum_typed_multipart = "0.9.0"
